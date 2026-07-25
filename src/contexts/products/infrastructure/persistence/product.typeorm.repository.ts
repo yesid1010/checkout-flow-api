@@ -41,6 +41,16 @@ export class ProductTypeOrmRepository implements ProductRepository {
     return (result.affected ?? 0) > 0;
   }
 
+  async restoreStock(id: string, quantity: number): Promise<void> {
+    await this.repository
+      .createQueryBuilder()
+      .update(ProductOrmEntity)
+      .set({ stock: () => 'stock + :quantity' })
+      .where('id = :id', { id })
+      .setParameter('quantity', quantity)
+      .execute();
+  }
+
   private toDomain(row: ProductOrmEntity): Product {
     return Product.create({
       id: row.id,
