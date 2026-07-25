@@ -38,4 +38,14 @@ describe('validate (env)', () => {
 
     expect(() => validate({ ...withoutDbHost })).toThrow();
   });
+
+  it('accepts a valid environment without the optional FRONTEND_URL', () => {
+    expect(() => validate({ ...validEnv })).not.toThrow();
+  });
+
+  it('accepts a valid environment with FRONTEND_URL set', () => {
+    const result = validate({ ...validEnv, FRONTEND_URL: 'https://checkout.example.com' });
+
+    expect(result.FRONTEND_URL).toBe('https://checkout.example.com');
+  });
 });
