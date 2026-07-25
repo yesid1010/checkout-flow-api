@@ -106,4 +106,13 @@ describe('ProductTypeOrmRepository', () => {
 
     expect(result).toBe(false);
   });
+
+  it('restoreStock issues an atomic increase for the given id and quantity', async () => {
+    queryBuilder.execute.mockResolvedValue({ affected: 1 });
+
+    await repository.restoreStock('prod-1', 2);
+
+    expect(queryBuilder.where).toHaveBeenCalledWith('id = :id', { id: 'prod-1' });
+    expect(queryBuilder.setParameter).toHaveBeenCalledWith('quantity', 2);
+  });
 });

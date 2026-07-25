@@ -12,4 +12,10 @@ export interface ProductRepository {
    * of the last unit can't both succeed.
    */
   decreaseStock(id: string, quantity: number): Promise<boolean>;
+
+  /**
+   * Compensating action for decreaseStock: used when stock was reserved
+   * up front but the payment that followed didn't end up APPROVED.
+   */
+  restoreStock(id: string, quantity: number): Promise<void>;
 }
