@@ -32,6 +32,21 @@ class EnvironmentVariables {
 
   @IsString()
   DB_NAME: string;
+
+  @IsString()
+  WOMPI_PUBLIC_KEY: string;
+
+  @IsString()
+  WOMPI_PRIVATE_KEY: string;
+
+  @IsString()
+  WOMPI_EVENTS_KEY: string;
+
+  @IsString()
+  WOMPI_INTEGRITY_KEY: string;
+
+  @IsString()
+  WOMPI_BASE_URL: string;
 }
 
 export function validate(config: Record<string, unknown>): EnvironmentVariables {

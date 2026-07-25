@@ -8,6 +8,11 @@ const validEnv = {
   DB_USERNAME: 'postgres',
   DB_PASSWORD: 'postgres',
   DB_NAME: 'checkout_flow',
+  WOMPI_PUBLIC_KEY: 'pub_stagtest_xxx',
+  WOMPI_PRIVATE_KEY: 'prv_stagtest_xxx',
+  WOMPI_EVENTS_KEY: 'stagtest_events_xxx',
+  WOMPI_INTEGRITY_KEY: 'stagtest_integrity_xxx',
+  WOMPI_BASE_URL: 'https://api-sandbox.co.uat.wompi.dev/v1',
 };
 
 describe('validate (env)', () => {
