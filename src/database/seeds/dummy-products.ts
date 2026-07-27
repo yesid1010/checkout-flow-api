@@ -10,8 +10,9 @@ export interface DummyProductSeed {
 export const DUMMY_PRODUCTS: DummyProductSeed[] = [
   {
     id: '11111111-1111-4111-8111-111111111111',
-    name: 'Wireless Headphones',
-    description: 'Over-ear noise-cancelling headphones with 30h battery life.',
+    name: 'Eau De Cologne Dominant 100 ml',
+    description:
+      'Perfume con fragancia masculina. Intensa mezcla de notas fougeres como el geranio, la bergamota y el cedro para dominar el mundo. Percepción olfativa intensa. Seductor, fougere ambarada.',
     priceInCents: 259_900,
     imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
     stock: 15,
