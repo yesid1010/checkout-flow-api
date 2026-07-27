@@ -10,6 +10,7 @@ describe('ProductController', () => {
     name: 'Wireless Headphones',
     description: 'Noise-cancelling',
     priceInCents: 25000_00,
+    imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
     stock: 5,
   };
 

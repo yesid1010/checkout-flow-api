@@ -3,6 +3,7 @@ export interface DummyProductSeed {
   name: string;
   description: string;
   priceInCents: number;
+  imageUrl: string;
   stock: number;
 }
 
@@ -12,6 +13,7 @@ export const DUMMY_PRODUCTS: DummyProductSeed[] = [
     name: 'Wireless Headphones',
     description: 'Over-ear noise-cancelling headphones with 30h battery life.',
     priceInCents: 259_900,
+    imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
     stock: 15,
   },
   {
@@ -19,6 +21,7 @@ export const DUMMY_PRODUCTS: DummyProductSeed[] = [
     name: 'Mechanical Keyboard',
     description: '75% layout hot-swappable mechanical keyboard.',
     priceInCents: 349_900,
+    imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
     stock: 10,
   },
   {
@@ -26,6 +29,7 @@ export const DUMMY_PRODUCTS: DummyProductSeed[] = [
     name: 'Smart Watch',
     description: 'Fitness tracking smart watch with heart-rate monitor.',
     priceInCents: 599_900,
+    imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
     stock: 8,
   },
   {
@@ -33,6 +37,7 @@ export const DUMMY_PRODUCTS: DummyProductSeed[] = [
     name: 'Portable Speaker',
     description: 'Waterproof bluetooth speaker with 12h playtime.',
     priceInCents: 149_900,
+    imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
     stock: 20,
   },
 ];
