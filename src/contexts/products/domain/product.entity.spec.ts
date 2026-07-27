@@ -6,6 +6,7 @@ const buildProps = (overrides: Partial<Parameters<typeof Product.create>[0]> = {
   name: 'Wireless Headphones',
   description: 'Noise-cancelling over-ear headphones',
   priceInCents: 25000_00,
+  imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
   stock: Stock.create(10),
   ...overrides,
 });
@@ -18,6 +19,7 @@ describe('Product', () => {
     expect(product.name).toBe('Wireless Headphones');
     expect(product.description).toBe('Noise-cancelling over-ear headphones');
     expect(product.priceInCents).toBe(25000_00);
+    expect(product.imageUrl).toBe('https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg');
     expect(product.stock.value).toBe(10);
   });
 
@@ -39,6 +41,12 @@ describe('Product', () => {
     );
   });
 
+  it('rejects an empty image URL', () => {
+    expect(() => Product.create(buildProps({ imageUrl: '   ' }))).toThrow(
+      'Product image URL cannot be empty',
+    );
+  });
+
   it('reports available stock correctly', () => {
     const product = Product.create(buildProps({ stock: Stock.create(3) }));
 
@@ -54,6 +62,7 @@ describe('Product', () => {
       name: 'Wireless Headphones',
       description: 'Noise-cancelling over-ear headphones',
       priceInCents: 25000_00,
+      imageUrl: 'https://tissiniapp.s3.us-east-2.amazonaws.com/img/products/1000x1000/534919_0.jpg',
       stock: 10,
     });
   });

@@ -5,6 +5,7 @@ export interface ProductProps {
   name: string;
   description: string;
   priceInCents: number;
+  imageUrl: string;
   stock: Stock;
 }
 
@@ -13,6 +14,7 @@ export interface ProductPrimitives {
   name: string;
   description: string;
   priceInCents: number;
+  imageUrl: string;
   stock: number;
 }
 
@@ -25,6 +27,9 @@ export class Product {
     }
     if (!Number.isInteger(props.priceInCents) || props.priceInCents <= 0) {
       throw new Error('Product price must be a positive integer amount of cents');
+    }
+    if (!props.imageUrl.trim()) {
+      throw new Error('Product image URL cannot be empty');
     }
     return new Product(props);
   }
@@ -45,6 +50,10 @@ export class Product {
     return this.props.priceInCents;
   }
 
+  get imageUrl(): string {
+    return this.props.imageUrl;
+  }
+
   get stock(): Stock {
     return this.props.stock;
   }
@@ -59,6 +68,7 @@ export class Product {
       name: this.props.name,
       description: this.props.description,
       priceInCents: this.props.priceInCents,
+      imageUrl: this.props.imageUrl,
       stock: this.props.stock.value,
     };
   }

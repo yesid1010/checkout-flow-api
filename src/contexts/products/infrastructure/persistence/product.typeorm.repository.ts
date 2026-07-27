@@ -57,6 +57,7 @@ export class ProductTypeOrmRepository implements ProductRepository {
       name: row.name,
       description: row.description,
       priceInCents: row.priceInCents,
+      imageUrl: row.imageUrl,
       stock: Stock.create(row.stock),
     });
   }

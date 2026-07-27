@@ -14,6 +14,9 @@ export class ProductOrmEntity {
   @Column({ name: 'price_in_cents', type: 'integer' })
   priceInCents: number;
 
+  @Column({ name: 'image_url' })
+  imageUrl: string;
+
   @Column({ type: 'integer' })
   stock: number;
 }

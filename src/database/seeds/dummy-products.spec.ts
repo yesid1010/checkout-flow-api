@@ -20,6 +20,7 @@ describe('DUMMY_PRODUCTS', () => {
         name: dummy.name,
         description: dummy.description,
         priceInCents: dummy.priceInCents,
+        imageUrl: dummy.imageUrl,
         stock: Stock.create(dummy.stock),
       }),
     ).not.toThrow();
