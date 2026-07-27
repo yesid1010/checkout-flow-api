@@ -6,8 +6,8 @@ Frontend repo: [checkout-flow-web](https://github.com/yesid1010/checkout-flow-we
 
 ## Live deploy
 
-- API: _TBD_
-- Swagger docs: _TBD_/api
+- API: https://checkout-flow-api-production.up.railway.app
+- Swagger docs: https://checkout-flow-api-production.up.railway.app/api
 
 ## Business flow
 
